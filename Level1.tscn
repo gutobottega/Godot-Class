@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://tiles/grass2.png" type="Texture" id=1]
+[ext_resource path="res://tiles/grass5.png" type="Texture" id=2]
+[ext_resource path="res://tiles/grass1.png" type="Texture" id=3]
+[ext_resource path="res://tiles/grass4.png" type="Texture" id=4]
+[ext_resource path="res://tiles/grass3.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 191.336, 21.2019 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 149.896, 21.0456 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 105.003, 19.4744 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 48.6591, 21.2019 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 23.5474, 21.2019 )
+
+[node name="Plataforma" type="Node2D"]
+position = Vector2( 138.593, 5.99326 )
+
+[node name="grass1" type="Sprite" parent="."]
+position = Vector2( 90.265, 319.176 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass1/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass2" type="Sprite" parent="."]
+position = Vector2( 110.492, 404.58 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass2/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="grass3" type="Sprite" parent="."]
+position = Vector2( 406.408, 351.39 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass3/StaticBody2D"]
+position = Vector2( 3.53552, 0 )
+shape = SubResource( 3 )
+
+[node name="grass4" type="Sprite" parent="."]
+position = Vector2( 654.378, 276.474 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass4/StaticBody2D"]
+position = Vector2( 1.41425, 2.12131 )
+shape = SubResource( 4 )
+
+[node name="grass5" type="Sprite" parent="."]
+position = Vector2( 635.649, 403.081 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass5/StaticBody2D"]
+shape = SubResource( 5 )
