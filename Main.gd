@@ -1,20 +1,14 @@
 extends Node2D
 
-var total := 0.0
 
-func _ready() -> void:
-	update_core(total)
+var total : float = 0
 
-func _process(delta: float) -> void:
-	update_core(total)
-
-func inc_score(num: int) -> void:
-	total+= num
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var timer = get_node("Timer")
+	timer.connect("timeout",self,"update_score")
+	timer.start()
 	
-
-func update_core(current_score: float) -> void:
-	$Score.text = "Score: " + str(int(current_score))
-
-
-func _on_Timer_timeout() -> void:
-	inc_score(1)
+func update_score() -> void:
+	total += 1
+	$Score.text = str(total)
